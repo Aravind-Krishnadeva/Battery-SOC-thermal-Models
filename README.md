@@ -14,8 +14,21 @@ This repositary contains thermal model  of a 2RC single cell battery. This model
 2. Simscape Electrical
 
 ## System
+<img width="1537" height="648" alt="image" src="https://github.com/user-attachments/assets/51f4ebf0-6b6d-407b-9a69-25d9676edc4a" />
 
-## Outputs
+## Need for thermal simulation 
+The purpose of a thermal model is to predict, understand and control temperature behaviour of a physical system. A battery thermal model predicts heat generated inside the cell, which translates into temperature. A thermal model is used for
+1. Safety
+2. Performance of battery
+3. Lifetime and aging prediction
+4. Design of cooling system
+
+## Working of the model
+This project implements a lumped electro-thermal model of a lithium-ion battery cell using an equivalent RC electrical model coupled to a 1-node thermal network. Heat generation is calculated from ohmic losses (I2R) and SOC dependent
+entropic heat (I T DU/DT), and injected into the thermal domain via a controlled heat source. The cell’s temperature evolution is governed by a thermal mass and thermal resistance referenced to ambient temperature.
+
+## User interaction
+The user of the model, can alter the SOC (State of charge) from 0 to 100%. SOC does not directly change temperature; it influences heat generation through the SOC-dependent entropic heat term (it du/dt). The overall temperature rise is dominated by ohmic heating (I²R) and therefore evolves slowly with SOC due to the battery’s thermal mass.
 
 
 
