@@ -30,5 +30,14 @@ entropic heat (I T DU/DT), and injected into the thermal domain via a controlled
 ## User interaction
 The user of the model, can alter the SOC (State of charge) from 0 to 100%. SOC does not directly change temperature; it influences heat generation through the SOC-dependent entropic heat term (it du/dt). The overall temperature rise is dominated by ohmic heating (I²R) and therefore evolves slowly with SOC due to the battery’s thermal mass.
 
+## Understanding the math ( Behind the scenes)
+# Building the R-C parameters
+Nominal internal resistance of the cell = 50 mohms ( Rtotal): Rtotal = R0 + R1 + R2
+Ohmic resistance = 50% of total resistance = 25 mohms
+R1 (Electrochemical charge transfer resistance) = 8 mohms
+R2 ( Diffusion polarization resistance ) = 17 mohms
+
+
+
 
 
