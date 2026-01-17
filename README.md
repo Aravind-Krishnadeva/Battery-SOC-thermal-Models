@@ -32,10 +32,31 @@ The user of the model, can alter the SOC (State of charge) from 0 to 100%. SOC d
 
 ## Understanding the math ( Behind the scenes)
 # Building the R-C parameters
+## Design of R
 Nominal internal resistance of the cell = 50 mohms ( Rtotal): Rtotal = R0 + R1 + R2
 Ohmic resistance = 50% of total resistance = 25 mohms
 R1 (Electrochemical charge transfer resistance) = 8 mohms
 R2 ( Diffusion polarization resistance ) = 17 mohms
+## Design of C
+Assuming time constant for T1 (fast dynamics) and T2 (slow diffusion) 
+T1 = 5s, T2 = 100S
+Since T = RC, C1= T1/R1 = 5 / 8mohm = 625F
+C2 = T2/R2 = 100/0.017 = 5880F
+Choosing C1= 600F and C2 as 6000F
+## Choosing load resistance, (Assumed nominal capacity of 2.6AH)
+Design of load resistance depends on amount of current that needs to flow within the system. Current depends on the battery capacity.
+Usually a good fit is 0.5 to 1C of the battery capacity. Since AH of battery is around 2.6AH, we choose a current (safe) of 0.5C which is 1.3A
+Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
+
+# Study of rate of rise of temperature
+For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
+So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at mid SOC (50%) we need to understand the temperature rise from the given specs
+
+1. Ohmic heat generation, Q1= I2 X Rtotal
+2. Entropic heat generation, Q2 = IXTX DU/DT
+Total heat, Q= Q1+Q2
+
+
 
 
 
