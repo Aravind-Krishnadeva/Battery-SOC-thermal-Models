@@ -52,9 +52,12 @@ Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
 For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
 So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at mid SOC (50%) we need to understand the temperature rise from the given specs
 
-1. Ohmic heat generation, Q1= I^2 * Rtotal
+1. Ohmic heat generation, Q1= $$I^2$$ * Rtotal, where Rtotal = R0 + R1 + R2
 2. Entropic heat generation, Q2 = I*T*(DU/DT)
-Total heat, Q= Q1+Q2
+Total heat, Q= Q1+Q2 = $$(1.3)^2$$ * 0.05  + = **85 mw**  ( TBC)
+
+The total heat generation (W) is injected into the thermal domain using a controlled heat flow source. The battery is represented thermally by a thermal mass which captures the cell’s heat storage capability. Heat dissipation to the environment is modeled through a thermal resistance connected to a fixed ambient temperature source.
+
 
 
 
