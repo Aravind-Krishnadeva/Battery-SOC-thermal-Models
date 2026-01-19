@@ -1,7 +1,7 @@
 # Battery-SOC-thermal-Models
 Electro thermal model of a single cell 18650 battery 
 
-This repositary contains thermal model  of a 2RC single cell battery. This model exhibits thermal behaviour of the battery due to the effect of reversible and irreversible heat generated in a battery. The process employed in this model involves the following steps
+This repositary contains lumped 1 node thermal model  of a 2RC single cell battery. This model exhibits thermal behaviour of the battery due to the effect of reversible and irreversible heat generated in a battery. The process employed in this model involves the following steps
 
 1. Create a 2RC model of a battery
 2. Add a ohmic power dissipation to the 2RC model
@@ -52,8 +52,8 @@ Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
 For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
 So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at mid SOC (50%) we need to understand the temperature rise from the given specs
 
-1. Ohmic heat generation, Q1= I2 X Rtotal
-2. Entropic heat generation, Q2 = IXTX DU/DT
+1. Ohmic heat generation, Q1= I^2 * Rtotal
+2. Entropic heat generation, Q2 = I*T*(DU/DT)
 Total heat, Q= Q1+Q2
 
 
