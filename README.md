@@ -14,7 +14,8 @@ This repositary contains lumped 1 node thermal model  of a 2RC single cell batte
 2. Simscape Electrical
 
 ## System
-<img width="1537" height="648" alt="image" src="https://github.com/user-attachments/assets/51f4ebf0-6b6d-407b-9a69-25d9676edc4a" />
+<img width="1159" height="391" alt="image" src="https://github.com/user-attachments/assets/43830e12-0260-4b0f-acb6-7403482fc3e9" />
+
 
 ## Need for thermal simulation 
 The purpose of a thermal model is to predict, understand and control temperature behaviour of a physical system. A battery thermal model predicts heat generated inside the cell, which translates into temperature. A thermal model is used for
@@ -43,19 +44,23 @@ T1 = 5s, T2 = 100S
 Since T = RC, C1= T1/R1 = 5 / 8mohm = 625F
 C2 = T2/R2 = 100/0.017 = 5880F
 Choosing C1= 600F and C2 as 6000F
-## Choosing load resistance, (Assumed nominal capacity of 2.6AH)
+### Choosing load resistance, (Assumed nominal capacity of 2.6AH)
 Design of load resistance depends on amount of current that needs to flow within the system. Current depends on the battery capacity.
 Usually a good fit is 0.5 to 1C of the battery capacity. Since AH of battery is around 2.6AH, we choose a current (safe) of 0.5C which is 1.3A
 Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
 
 # Study of rate of rise of temperature
 For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
-So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at mid SOC (50%) we need to understand the temperature rise from the given specs
+So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at three different SOC levels, 0%, 50% and 90%, we will study rate of temperature rise.
 
-1. Ohmic heat generation, Q1= $$I^2$$ * Rtotal, where Rtotal = R0 + R1 + R2
-2. Entropic heat generation, Q2 = I*T*(DU/DT)
-Total heat, Q= Q1+Q2 = $$(1.3)^2$$ * 0.05  + = **85 mw**  ( TBC)
+Case 1: SOC=0 (Battery discharged)
+When the state of charge (SOC) of a battery is zero, the entropic heat contribution essentially vanishes because there are no active electrochemical reactions occurring. Since electrode becomes more disordered (entropy increases) , the system releases heat, which is a exothermic reaction. DU/DT term remains negitive, which corresponds to an inverse proportionality between open circuit voltage (U) and temperature (T).
 
+1. Ohmic heat generation, Q1= $$I^2$$ * Rtotal = $$(1.3)^2$$ * 0.05 = 85 mW
+2. Entropic heat generation, Q2 = I*T*(DU/DT) = 1.3* 25 *(-0.0045) =  - 0.01482 
+Total heat, Q= Q1+Q2 = **0.06887W**
+
+To understand heat generation, we need to learn different components of a battery thermal model. 
 The total heat generation (W) is injected into the thermal domain using a controlled heat flow source. The battery is represented thermally by a thermal mass which captures the cell’s heat storage capability. Heat dissipation to the environment is modeled through a thermal resistance connected to a fixed ambient temperature source.
 
 
