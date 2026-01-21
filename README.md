@@ -54,14 +54,18 @@ For a single Li-ion cell under nominal operation, the expected temperature rise 
 So assuming a discharge rate of 0.5C, ambient temperature of 25C, and at three different SOC levels, 0%, 50% and 90%, we will study rate of temperature rise.
 
 Case 1: SOC=0 (Battery discharged)
-When the state of charge (SOC) of a battery is zero, the entropic heat contribution essentially vanishes because there are no active electrochemical reactions occurring. Since electrode becomes more disordered (entropy increases) , the system releases heat, which is a exothermic reaction. DU/DT term remains negitive, which corresponds to an inverse proportionality between open circuit voltage (U) and temperature (T).
+When the state of charge (SOC) of a battery is zero, the entropic heat contribution essentially vanishes because there are no active electrochemical reactions occurring. Since electrode becomes more disordered (entropy increases) , the system releases heat, which is a exothermic reaction. DU/DT term remains negitive, which corresponds to an inverse proportionality between open circuit voltage (U) and temperature (T). We understand rate of change of temperature against time for a current. 
 
 1. Ohmic heat generation, Q1= $$I^2$$ * Rtotal = $$(1.3)^2$$ * 0.05 = 85 mW
 2. Entropic heat generation, Q2 = I*T*(DU/DT) = 1.3* 25 *(-0.0045) =  - 0.01482 
 Total heat, Q= Q1+Q2 = **0.06887W**
 
 To understand heat generation, we need to learn different components of a battery thermal model. 
-The total heat generation (W) is injected into the thermal domain using a controlled heat flow source. The battery is represented thermally by a thermal mass which captures the cell’s heat storage capability. Heat dissipation to the environment is modeled through a thermal resistance connected to a fixed ambient temperature source.
+The total heat generation (W) is injected into the thermal domain using a controlled heat flow source. The battery is represented thermally by a thermal mass which captures the cell’s heat storage capability. 
+
+Thermal mass of the system = m * Cp, where m= mass of battery, and Cp is specific heat in J/kg-k. A high specific heat capacity implies, that the battery heats up slowly. For practical thermal management, a value around 900-1000 J/(kg·K) is a common starting point. Assuming a mass of 50 g,and a specific heat capacity of 1100 J/Kg-k, we obtain
+Thermal mass = 0.05 kg * 1100 J/Kg-k = 55 J/K. This suggests that for every 55J of heat, temperature raises by 1K.
+Temp rise = Q * Rth = 0.06887 *10K/W = 0.68 degreeC
 
 
 
