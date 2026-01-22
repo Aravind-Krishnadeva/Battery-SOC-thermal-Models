@@ -71,6 +71,10 @@ Thermal mass of the system = m * Cp, where m= mass of battery, and Cp is specifi
 **Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
 
 **Case 2: SOC=50%**
+At mid SOC, entropic heat is positive, and since both electrodes are in transitioning phase, and hence entropy change is more here. Ohmic heat remains the same. 
+
+Total heat, Q = Q1+Q2 = 85mw + 0.008382 = **0.09207W**
+**Temp rise** =  Q * Rth = 0.09207 *10K/W =  **0.92 degreeC**
 
 
 
