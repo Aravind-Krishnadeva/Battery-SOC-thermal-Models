@@ -50,7 +50,7 @@ Choosing a load resistance has to do with amount of current that needs to flow w
 Usually a good fit is 0.5 to 1C of the battery capacity. Since AH of battery is around 2.6AH, we choose a current (safe) of 0.5C which is 1.3A
 Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
 
-# Study of rate of rise of temperature
+### Study of rate of rise of temperature
 For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
 So assuming a discharge rate of 0.5C, ambient temperature of 25C, we study temp rise at three different SOC levels. 
 
@@ -66,17 +66,22 @@ The total heat generation (W) is injected into the thermal domain using a contro
 
 Thermal mass of the system = m * Cp, where m= mass of battery, and Cp is specific heat in J/kg-k. A high specific heat capacity implies, that the battery heats up slowly. For practical thermal management, a value around 900-1000 J/(kg·K) is a common starting point. Assuming a mass of 50 g, and a specific heat capacity of 1100 J/Kg-k, we obtain
 
-**Thermal mass** = 0.05 kg * 1100 J/Kg-k = 55 J/K. **This suggests that for every 55J of heat, temperature raises by 1 degree centigrade**.
-
-**Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
+**Thermal mass** = 0.05 kg * 1100 J/Kg-k = 55 J/K. **This suggests that for every 55J of heat, temperature raises by 1 degree centigrade**. **Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
+**Final temperature** = 25.69C
 
 **Case 2: SOC=50%**
-At mid SOC, entropic heat is positive, and since both electrodes are in transitioning phase, and hence entropy change is more here. Ohmic heat remains the same. 
+At mid SOC, entropic heat is positive, and since both electrodes are in transitioning phase, and hence entropy change is more here. This adds onto to the rise in temp. Ohmic heat remains the same. 
 
 Total heat, Q = Q1+Q2 = 85mw + 0.008382 = **0.09207W**
 **Temp rise** =  Q * Rth = 0.09207 *10K/W =  **0.92 degreeC**
+**Final temperature** = 25.92
 
+**Case 3: SOC=90%**
+At high SOC,the electrodes are either completely lithiated state, and in an ordered manner which reduces the entropy change. While the entropic heat remains close to zero or negitive, Ohmic heat remains the same. 
 
+Total heat, Q = Q1+Q2 = 85mw - 0.0002097 = **0.08347W**
+**Temp rise** =  Q * Rth = 0.08347 *10K/W =  **0.83 degreeC**
+**Final temperature** = 25.83C
 
 
 
