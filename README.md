@@ -66,7 +66,9 @@ The total heat generation (W) is injected into the thermal domain using a contro
 
 Thermal mass of the system = m * Cp, where m= mass of battery, and Cp is specific heat in J/kg-k. A high specific heat capacity implies, that the battery heats up slowly. For practical thermal management, a value around 900-1000 J/(kg·K) is a common starting point. Assuming a mass of 50 g, and a specific heat capacity of 1100 J/Kg-k, we obtain
 
-**Thermal mass** = 0.05 kg * 1100 J/Kg-k = 55 J/K. **This suggests that for every 55J of heat, temperature raises by 1 degree centigrade**. **Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
+**Thermal mass** = 0.05 kg * 1100 J/Kg-k = 55 J/K. **This suggests that for every 55J of heat, temperature raises by 1 degree centigrade**. 
+
+**Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
 **Final temperature** = 25.69C
 
 **Case 2: SOC=50%**
