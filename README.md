@@ -54,7 +54,7 @@ Rl = VL/IL = 3.7V/1.3A = **2.8 ohms**
 For a single Li-ion cell under nominal operation, the expected temperature rise above ambient is typically 2–5 °C, and should not exceed ~10 °C in steady state.
 So assuming a discharge rate of 0.5C, ambient temperature of 25C, we study temp rise at three different SOC levels. 
 
-**Case 1: SOC=0%**
+### Case 1: SOC=0%
 When the state of charge (SOC) of a battery is zero, the entropic heat contribution essentially vanishes because there are no active electrochemical reactions occurring. Since electrode becomes more disordered (entropy increases),the system absorbs heat from the surrounding, which is a endothermic reaction. While irreversible (ohmic) heat term is predominant, the entropic heat is governed by the SOC parameter. DU/DT term remains negitive, which corresponds to an inverse proportionality between open circuit voltage (U) and temperature (T). We understand rate of change of temperature against time for a current. 
 
 1. Ohmic heat generation, Q1= $$I^2$$ * Rtotal = $$(1.3)^2$$ * 0.05 = **85 mW**
@@ -71,14 +71,14 @@ Thermal mass of the system = m * Cp, where m= mass of battery, and Cp is specifi
 **Temp rise** =  Q * Rth = 0.06887 *10K/W =  **0.68 degreeC**
 **Final temperature** = 25.69C
 
-**Case 2: SOC=50%**
+### Case 2: SOC=50%
 At mid SOC, entropic heat is positive, and since both electrodes are in transitioning phase, and hence entropy change is more here. This adds onto to the rise in temp. Ohmic heat remains the same. 
 
 Total heat, Q = Q1+Q2 = 85mw + 0.008382 = **0.09207W**
 **Temp rise** =  Q * Rth = 0.09207 *10K/W =  **0.92 degreeC**
 **Final temperature** = 25.92
 
-**Case 3: SOC=90%**
+### Case 3: SOC=90%
 At high SOC,the electrodes are either completely lithiated state, and in an ordered manner which reduces the entropy change. While the entropic heat remains close to zero or negitive, Ohmic heat remains the same. 
 
 Total heat, Q = Q1+Q2 = 85mw - 0.0002097 = **0.08347W**
